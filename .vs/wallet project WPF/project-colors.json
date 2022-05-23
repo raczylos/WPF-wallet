@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "4f68135f-41ff-4efa-bb01-dc7b5bcb08b3": {
+      "ProjectGuid": "4f68135f-41ff-4efa-bb01-dc7b5bcb08b3",
+      "DisplayName": "wallet project WPF",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
