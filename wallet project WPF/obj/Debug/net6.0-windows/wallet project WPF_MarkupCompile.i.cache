@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\App.xaml
-6-1340432456
+7291351338
 
-102024935890
+11-1950334770
 1941905061893
-HistoryWindow.xaml;MainWindow.xaml;Window1.xaml;Window2.xaml;Window3.xaml;Window4.xaml;
+HistoryWindow.xaml;LoginWindow.xaml;MainWindow.xaml;PredictionsWindow.xaml;SelectWallet.xaml;StatisticsWindow.xaml;TransactionWindow.xaml;
 
-True
+False
 

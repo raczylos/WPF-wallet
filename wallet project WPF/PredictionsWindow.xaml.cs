@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace wallet_project_WPF
 {
     /// <summary>
-    /// Logika interakcji dla klasy Window3.xaml
+    /// Logika interakcji dla klasy Window1.xaml
     /// </summary>
-    public partial class Window3 : Window
+    public partial class PredictionsWindow : Window
     {
-        public Window3()
+        public PredictionsWindow()
         {
             InitializeComponent();
         }
