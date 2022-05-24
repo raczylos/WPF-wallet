@@ -7,6 +7,68 @@
         mc:Ignorable="d"
         Title="SelectWallet" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.6*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions >
+
+            <Label 
+                    FontWeight="Light"
+                    FontFamily="helvetica"
+                    FontSize="24"
+                    Foreground="Black"
+                    HorizontalAlignment="Left">Choose wallet:
+            </Label>
+
+            <Button Grid.Column="1" Height="25" Width="55" HorizontalAlignment="Right" Margin="0,0,20,0">Add</Button>
+
+            <TextBox FontFamily="Helvetica"
+                             Grid.Column="2"     
+                             FontWeight="Light"
+                             Text="Name:"
+                             FontSize="18"
+                             HorizontalAlignment="Stretch"
+                             VerticalAlignment="Center"
+                             Foreground="Black"/>
+            <Button Grid.Column="3" Height="25" Width="55" HorizontalAlignment="Right" Margin="0,0,20,0">Edit</Button>
+            <Button Grid.Column="4" Height="25" Width="55" HorizontalAlignment="Center">Remove</Button>
+        </Grid>
+
+        <ListView BorderThickness="1" BorderBrush="Black" Margin="0,43,0,43" Grid.RowSpan="3" >
+            <ListView.View >
+
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="name" Width="100" ></GridViewColumn>
+                        <GridViewColumn Header="balance" Width="150"></GridViewColumn>
+                    </GridView.Columns>
+
+                </GridView>
+            </ListView.View>
+
+            <ListViewItem>item 1</ListViewItem>
+            <ListViewItem>itme 2</ListViewItem>
+            <ListViewItem>item 3</ListViewItem>
+            <ListViewItem>item 4</ListViewItem>
+
+        </ListView>
+
+        <Button Grid.Row="2"
+                Width="60"
+                Height="25"
+               HorizontalAlignment="Right"
+                Margin="0,5,50,5">Confirm</Button>
     </Grid>
 </Window>

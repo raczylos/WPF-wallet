@@ -31,3 +31,36 @@ C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\
 C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\SelectWallet.baml
 C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\StatisticsWindow.baml
 C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\TransactionWindow.baml
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\bin\Debug\net6.0-windows\wallet project WPF.exe
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\bin\Debug\net6.0-windows\wallet project WPF.deps.json
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\bin\Debug\net6.0-windows\wallet project WPF.runtimeconfig.json
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\bin\Debug\net6.0-windows\wallet project WPF.dll
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\bin\Debug\net6.0-windows\wallet project WPF.pdb
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\wallet project WPF.csproj.AssemblyReference.cache
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\HistoryWindow.g.cs
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\LoginWindow.g.cs
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\PredictionsWindow.g.cs
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\SelectWallet.g.cs
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\StatisticsWindow.g.cs
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\TransactionWindow.g.cs
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\wallet project WPF_MarkupCompile.cache
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\wallet project WPF_MarkupCompile.lref
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\HistoryWindow.baml
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\LoginWindow.baml
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\PredictionsWindow.baml
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\SelectWallet.baml
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\StatisticsWindow.baml
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\TransactionWindow.baml
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\wallet project WPF.g.resources
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\wallet project WPF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\wallet project WPF.AssemblyInfoInputs.cache
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\wallet project WPF.AssemblyInfo.cs
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\wallet project WPF.csproj.CoreCompileInputs.cache
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\wallet project WPF.dll
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\refint\wallet project WPF.dll
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\wallet project WPF.pdb
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\wallet project WPF.genruntimeconfig.cache
+C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\ref\wallet project WPF.dll
