@@ -10,16 +10,19 @@
     <Compile Update="MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Window1.xaml.cs">
+    <Compile Update="LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Window2.xaml.cs">
+    <Compile Update="SelectWallet.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Window3.xaml.cs">
+    <Compile Update="TransactionWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Window4.xaml.cs">
+    <Compile Update="StatisticsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PredictionsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -30,16 +33,19 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Window1.xaml">
+    <Page Update="LoginWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Window2.xaml">
+    <Page Update="SelectWallet.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Window3.xaml">
+    <Page Update="TransactionWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Window4.xaml">
+    <Page Update="StatisticsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PredictionsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -17,9 +17,9 @@ namespace wallet_project_WPF
     /// <summary>
     /// Logika interakcji dla klasy Window4.xaml
     /// </summary>
-    public partial class Window4 : Window
+    public partial class TransactionWindow : Window
     {
-        public Window4()
+        public TransactionWindow()
         {
             InitializeComponent();
         }

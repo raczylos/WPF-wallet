@@ -17,9 +17,9 @@ namespace wallet_project_WPF
     /// <summary>
     /// Logika interakcji dla klasy Window2.xaml
     /// </summary>
-    public partial class Window2 : Window
+    public partial class SelectWallet : Window
     {
-        public Window2()
+        public SelectWallet()
         {
             InitializeComponent();
         }

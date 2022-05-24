@@ -20,12 +20,14 @@ C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\
 C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\wallet project WPF.pdb
 C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\wallet project WPF.genruntimeconfig.cache
 C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\MainWindow.g.cs
-C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\Window1.g.cs
-C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\Window2.g.cs
-C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\Window3.g.cs
-C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\Window4.g.cs
 C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\MainWindow.baml
-C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\Window1.baml
-C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\Window2.baml
-C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\Window3.baml
-C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\Window4.baml
+C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\LoginWindow.g.cs
+C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\PredictionsWindow.g.cs
+C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\SelectWallet.g.cs
+C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\StatisticsWindow.g.cs
+C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\TransactionWindow.g.cs
+C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\LoginWindow.baml
+C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\PredictionsWindow.baml
+C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\SelectWallet.baml
+C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\StatisticsWindow.baml
+C:\Users\Sebastian\Documents\projects\wallet project WPF\wallet project WPF\obj\Debug\net6.0-windows\TransactionWindow.baml
