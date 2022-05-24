@@ -23,5 +23,9 @@ namespace wallet_project_WPF
         {
             InitializeComponent();
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e) {
+
+        }
     }
 }

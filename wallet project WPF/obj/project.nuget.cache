@@ -1,8 +1,25 @@
 {
   "version": 2,
-  "dgSpecHash": "LF9/1OdIRwvJUFvvdxJ/pNq73GHf0TINM3exbSGickLqBQxE2yAAb/PoQohpG9lz6RR7IVajnlLQLnUD2VyekA==",
+  "dgSpecHash": "Vz9I5ienEiDwifHQUNJoxy9YdL86sfFZhbi0m04LvmlfIzZO/+cU4tPEb10J75bTjyPnIJwyYEvk+QKRYtkYgg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\48795\\Desktop\\studia\\WPF\\projekt\\WPF-wallet\\wallet project WPF\\wallet project WPF.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\kalar\\Documents\\source\\WPF-wallet\\wallet project WPF\\wallet project WPF.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kalar\\.nuget\\packages\\harfbuzzsharp\\2.8.2-preview.254\\harfbuzzsharp.2.8.2-preview.254.nupkg.sha512",
+    "C:\\Users\\kalar\\.nuget\\packages\\harfbuzzsharp.nativeassets.macos\\2.8.2-preview.254\\harfbuzzsharp.nativeassets.macos.2.8.2-preview.254.nupkg.sha512",
+    "C:\\Users\\kalar\\.nuget\\packages\\harfbuzzsharp.nativeassets.win32\\2.8.2-preview.254\\harfbuzzsharp.nativeassets.win32.2.8.2-preview.254.nupkg.sha512",
+    "C:\\Users\\kalar\\.nuget\\packages\\livechartscore\\2.0.0-beta.240\\livechartscore.2.0.0-beta.240.nupkg.sha512",
+    "C:\\Users\\kalar\\.nuget\\packages\\livechartscore.skiasharpview\\2.0.0-beta.240\\livechartscore.skiasharpview.2.0.0-beta.240.nupkg.sha512",
+    "C:\\Users\\kalar\\.nuget\\packages\\livechartscore.skiasharpview.wpf\\2.0.0-beta.240\\livechartscore.skiasharpview.wpf.2.0.0-beta.240.nupkg.sha512",
+    "C:\\Users\\kalar\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\kalar\\.nuget\\packages\\microsoft.win32.systemevents\\4.5.0\\microsoft.win32.systemevents.4.5.0.nupkg.sha512",
+    "C:\\Users\\kalar\\.nuget\\packages\\skiasharp\\2.88.0-preview.254\\skiasharp.2.88.0-preview.254.nupkg.sha512",
+    "C:\\Users\\kalar\\.nuget\\packages\\skiasharp.harfbuzz\\2.88.0-preview.254\\skiasharp.harfbuzz.2.88.0-preview.254.nupkg.sha512",
+    "C:\\Users\\kalar\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.0-preview.254\\skiasharp.nativeassets.macos.2.88.0-preview.254.nupkg.sha512",
+    "C:\\Users\\kalar\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.0-preview.254\\skiasharp.nativeassets.win32.2.88.0-preview.254.nupkg.sha512",
+    "C:\\Users\\kalar\\.nuget\\packages\\skiasharp.views.desktop.common\\2.88.0-preview.254\\skiasharp.views.desktop.common.2.88.0-preview.254.nupkg.sha512",
+    "C:\\Users\\kalar\\.nuget\\packages\\skiasharp.views.wpf\\2.88.0-preview.254\\skiasharp.views.wpf.2.88.0-preview.254.nupkg.sha512",
+    "C:\\Users\\kalar\\.nuget\\packages\\system.drawing.common\\4.5.1\\system.drawing.common.4.5.1.nupkg.sha512",
+    "C:\\Users\\kalar\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+  ],
   "logs": []
 }

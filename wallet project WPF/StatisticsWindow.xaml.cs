@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using LiveChartsCore;
+using LiveChartsCore.SkiaSharpView;
 
 namespace wallet_project_WPF
 {
@@ -23,5 +25,11 @@ namespace wallet_project_WPF
         {
             InitializeComponent();
         }
+        public ISeries[] Series { get; set; }
+            = new ISeries[] {
+                new PieSeries<double> { Values = new double[] { 2 } },
+                new PieSeries<double> { Values = new double[] { 4 } },
+                new PieSeries<double> { Values = new double[] { 6 } }, };
+            }
     }
 }

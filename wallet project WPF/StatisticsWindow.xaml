@@ -4,9 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wallet_project_WPF"
+        xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
         mc:Ignorable="d"
         Title="StatisticsWindow" Height="450" Width="800">
     <Grid>
-        
+        <!--<lvc:PieChart Series="{Binding Series}"></lvc:PieChart>-->
+        <Label Content="Żywność:" HorizontalAlignment="Left" Margin="503,150,0,0" VerticalAlignment="Top" FontWeight="Normal" Foreground="#FFD3D40A"/>
+        <Label Content="Podatki: " HorizontalAlignment="Left" Margin="503,181,0,0" VerticalAlignment="Top" Foreground="#FF1AB74F"/>
+        <Label Content="Przyjemności: " HorizontalAlignment="Left" Margin="503,212,0,0" VerticalAlignment="Top" Background="#00000000" Foreground="#FFE87321"/>
+        <Label Content="443zł" HorizontalAlignment="Left" Margin="566,150,0,0" VerticalAlignment="Top" FontWeight="Normal" Foreground="Black" RenderTransformOrigin="0.854,0.492"/>
+        <Label Content="922zł" HorizontalAlignment="Left" Margin="563,181,0,0" VerticalAlignment="Top" FontWeight="Normal" Foreground="Black" RenderTransformOrigin="0.854,0.492"/>
+        <Label Content="600zł" HorizontalAlignment="Left" Margin="593,212,0,0" VerticalAlignment="Top" FontWeight="Normal" Foreground="Black" RenderTransformOrigin="0.854,0.492"/>
+        <Label Content="Łącznie:  1965zł" HorizontalAlignment="Left" Margin="506,243,0,0" VerticalAlignment="Top" Background="#00000000" Foreground="Black" BorderThickness="0,1,0,0" BorderBrush="#FF3E3E3E" Width="125"/>
+        <Label Content="Wydatki:" HorizontalAlignment="Left" Margin="506,119,0,0" VerticalAlignment="Top" Background="#00000000" Foreground="Black" BorderBrush="Black" BorderThickness="0,0,0,1" Width="125"/>
+        <Label Content="Wpływy: " HorizontalAlignment="Left" Margin="161,119,0,0" VerticalAlignment="Top" Background="#00000000" Foreground="Black" BorderThickness="0,0,0,1" Width="125" BorderBrush="Black"/>
+        <Label Content="Praca: &#xD;&#xA;" HorizontalAlignment="Left" Margin="160,150,0,0" VerticalAlignment="Top" FontWeight="Normal" Foreground="#FF00B3FF" Width="39"/>
+        <Label Content="Praca 2:" HorizontalAlignment="Left" Margin="161,181,0,0" VerticalAlignment="Top" Foreground="#FF4F63B1"/>
+        <Label Content="Inne: " HorizontalAlignment="Left" Margin="161,212,0,0" VerticalAlignment="Top" Background="#00000000" Foreground="#FFB771F3"/>
+        <Label Content="1000zł" HorizontalAlignment="Left" Margin="204,150,0,0" VerticalAlignment="Top" FontWeight="Normal" Foreground="Black" RenderTransformOrigin="0.854,0.492"/>
+        <Label Content="2000zł" HorizontalAlignment="Left" Margin="217,181,0,0" VerticalAlignment="Top" FontWeight="Normal" Foreground="Black" RenderTransformOrigin="0.854,0.492"/>
+        <Label Content="2500zł" HorizontalAlignment="Left" Margin="205,212,0,0" VerticalAlignment="Top" FontWeight="Normal" Foreground="Black" RenderTransformOrigin="0.854,0.492"/>
+        <Label Content="Łącznie:  5500zł" HorizontalAlignment="Left" Margin="161,243,0,0" VerticalAlignment="Top" Background="#00000000" Foreground="Black" BorderThickness="0,1,0,0" BorderBrush="#FF3E3E3E" Width="125"/>
+        <Label Content="Zysk/Strata : 3535zł" HorizontalAlignment="Center" Margin="0,315,0,0" VerticalAlignment="Top" Background="#00000000" Foreground="Black" BorderThickness="0,1,0,0" Width="125"/>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="128,102,485,134"/>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="475,102,138,134"/>
+        <DatePicker HorizontalAlignment="Left" Margin="76,39,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

@@ -7,6 +7,18 @@
         mc:Ignorable="d"
         Title="TransactionWindow" Height="450" Width="800">
     <Grid>
-        
+        <Border BorderBrush="Black" BorderThickness="1" Margin="267,68,256,214">
+        </Border>
+        <Button Content="Dodaj transakcję" HorizontalAlignment="Left" Margin="349,181,0,0" VerticalAlignment="Top" Height="26" Width="116"/>
+        <TextBox HorizontalAlignment="Left" Margin="280,82,0,0" TextWrapping="Wrap" Text="Kwota:" VerticalAlignment="Top" Width="111" TextChanged="TextBox_TextChanged" Height="27" TextAlignment="Left"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,10,633,157"/>
+        <Button Content="Edytuj transakcję" HorizontalAlignment="Left" Margin="30,291,0,0" VerticalAlignment="Top" Height="26" Width="116" Click="Button_Click"/>
+        <Button Content="Usuń transakcję" HorizontalAlignment="Left" Margin="30,322,0,0" VerticalAlignment="Top" Height="26" Width="116"/>
+        <RadioButton Content="Wpływ" HorizontalAlignment="Left" Margin="410,81,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Wydatek" HorizontalAlignment="Left" Margin="410,97,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="280,122,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged" IsEditable="True" Text="Wybierz kategorię"/>
+        <CheckBox Content="Transakcja cykliczna" HorizontalAlignment="Left" Margin="280,149,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked"/>
+
+
     </Grid>
 </Window>
