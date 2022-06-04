@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\
+C:\Users\kalar\Documents\source\WPF-wallet\wallet project WPF\obj\Debug\net6.0-windows\
 wallet_project_WPF
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\48795\Desktop\studia\WPF\projekt\WPF-wallet\wallet project WPF\App.xaml
-7291351338
+C:\Users\kalar\Documents\source\WPF-wallet\wallet project WPF\App.xaml
+8-533079624
 
-9-1360656211
-1942030480316
-HistoryWindow.xaml;LoginWindow.xaml;MainWindow.xaml;PredictionsWindow.xaml;SelectWallet.xaml;StatisticsWindow.xaml;TransactionWindow.xaml;
+13645565537
+223-251552964
+HistoryWindow.xaml;LoginWindow.xaml;MainWindow.xaml;PredictionsWindow.xaml;RegisterWindow.xaml;SelectWallet.xaml;StatisticsWindow.xaml;TransactionWindow.xaml;
 
 False
 

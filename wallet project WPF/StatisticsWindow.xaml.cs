@@ -30,6 +30,6 @@ namespace wallet_project_WPF
                 new PieSeries<double> { Values = new double[] { 2 } },
                 new PieSeries<double> { Values = new double[] { 4 } },
                 new PieSeries<double> { Values = new double[] { 6 } }, };
-            }
+            
     }
 }

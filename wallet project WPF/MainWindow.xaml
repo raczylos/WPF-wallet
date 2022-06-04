@@ -5,8 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wallet_project_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Window.Resources>
+        <CollectionViewSource x:Key="walletViewSource"/>
+        <CollectionViewSource x:Key="userWalletsViewSource"
+                              Source="{Binding Wallets, Source={StaticResource walletViewSource}}"/>
+    </Window.Resources>
     <Grid>
-
+        <DataGrid x:Name="walletsDataGrid" AutoGenerateColumns="False" 
+          EnableRowVirtualization="True" 
+          ItemsSource="{Binding Source={StaticResource walletViewSource}}" 
+          Margin="13,0,43,229" RowDetailsVisibilityMode="VisibleWhenSelected" 
+          RenderTransformOrigin="0.488,0.251" Height="139" VerticalAlignment="Bottom">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding UserId}" Header="User Id" 
+                            Width="SizeToHeader" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="usersDataGrid" AutoGenerateColumns="False" 
+          EnableRowVirtualization="True" 
+          ItemsSource="{Binding  Source={StaticResource userWalletsViewSource}}" 
+          Margin="13,205,43,108" RowDetailsVisibilityMode="VisibleWhenSelected" 
+          RenderTransformOrigin="0.488,0.251">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding UserOwnerId}" 
+                            Header="User Owner Id" Width="SizeToHeader"
+                            IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding WalletId}" Header="Wallet Id" 
+                            Width="SizeToHeader" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding WalletName}" Header="Wallet Name" 
+                            Width="SizeToHeader"/>
+                <DataGridTextColumn Binding="{Binding Balance}" Header="Balance" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Save" HorizontalAlignment="Center" Margin="0,240,0,0" 
+        Click="Button_Click" Height="20" Width="123"/>
     </Grid>
+
 </Window>
