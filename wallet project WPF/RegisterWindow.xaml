@@ -25,9 +25,8 @@
 
             <StackPanel Grid.Row="1" >
                 <StackPanel Orientation="Horizontal">
-                    <TextBox FontFamily="Helvetica"
+                    <TextBox Name="User_Name" FontFamily="Helvetica"
                              FontWeight="Light"
-                             Text="Username"
                              FontSize="20"
                              HorizontalAlignment="Center"
                              Foreground="Black"
@@ -37,7 +36,8 @@
                              HorizontalContentAlignment="Center"
                              Opacity="0.5"
                              Height="25"
-                             Margin="63,0,0,0"/>
+                             Margin="63,0,0,0"
+                             Text="{Binding Name, Mode=TwoWay}"/>
 
                 </StackPanel>
                 <Border Width="250"
@@ -46,7 +46,7 @@
                         Opacity="0.5"/>
 
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                    <PasswordBox FontFamily="Helvetica"
+                    <PasswordBox Name="User_Password" FontFamily="Helvetica"
                              FontWeight="Light"
                              Password="Password"
                              FontSize="20"
@@ -67,7 +67,7 @@
                         Opacity="0.5"/>
 
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                    <PasswordBox FontFamily="Helvetica"
+                    <PasswordBox Name="User_Password_Repeat" FontFamily="Helvetica"
                              FontWeight="Light"
                              Password="Password"
                              FontSize="20"
@@ -90,7 +90,7 @@
 
                 <StackPanel Orientation="Horizontal" Margin="0,50,0,0" HorizontalAlignment="Center">
                     
-                    <Button Width="100" Height="40" Content="REGISTER"/>
+                    <Button Name="Register_Button" Width="100" Height="40" Content="REGISTER" Click="Register_Button_Click"/>
                 </StackPanel>
 
             </StackPanel>

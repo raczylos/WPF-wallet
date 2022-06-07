@@ -19,9 +19,23 @@ namespace wallet_project_WPF
     /// </summary>
     public partial class RegisterWindow : Window
     {
+        User user = new User() { Name="Username", Password="Password" };
         public RegisterWindow()
         {
+            this.DataContext = user;
             InitializeComponent();
+        }
+
+        private void Register_Button_Click(object sender, RoutedEventArgs e) {
+            using(WalletContext _context = new WalletContext()) {
+                _context.Database.EnsureCreated();
+                if(User_Password.Password == User_Password_Repeat.Password) {
+                    user.Password = User_Password.Password;
+                }
+                _context.Users.Add(user);
+                _context.SaveChanges();
+            }
+
         }
     }
 }
