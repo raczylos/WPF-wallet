@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ namespace wallet_project_WPF {
 
         public int UserOwnerId { get; set; }
         public virtual User UserOwner { get; set; }
+        public ICollection<Transaction>? Transactions { get; set; }
+            = new ObservableCollection<Transaction>();
 
     }
 }
