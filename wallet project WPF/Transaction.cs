@@ -5,6 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace wallet_project_WPF {
-    internal class Transaction {
+    public class Transaction {
+        public int TransactionId { get; set; }
+        public double MoneyAmount { get; set; }
+        public bool isCycle { get; set; } // transaction repeats every month
+        public DateTime date { get; set; } // day of the month
+        public virtual Category? Category { get; set; }
+        public virtual Wallet? Wallet { get; set; }
     }
 }
