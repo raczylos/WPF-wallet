@@ -39,24 +39,16 @@ namespace wallet_project_WPF
 
             List<String> list = new List<String>();
             list.Add("");
-            //foreach (Transaction transaction in _context.Transactions)
-            //{
-            //    try
-            //    {
-            //        //MessageBox.Show(transaction.Category.Name);
-            //        string text5 = transaction.Category.Name;
-            //        MessageBox.Show(text5);
-            //        list.Add(text5);
-            //    }
-            //    catch
-            //    {
+            foreach (Transaction transaction in _context.Transactions) {
+                //MessageBox.Show(transaction.Category.Name);
+                string text5 = transaction.Category.Name;
+                //MessageBox.Show(text5);
+                list.Add(text5);
 
-            //    }
-                
 
-            //}
+            }
             categoryComboBox.ItemsSource = list;
-
+            
             //MessageBox.Show(_context.Transactions.ToList()[1].MoneyAmount.ToString());
 
 
@@ -102,7 +94,7 @@ namespace wallet_project_WPF
             }
 
 
-            MessageBox.Show(filterObj.MoneyAmount.ToString());
+            //MessageBox.Show(filterObj.MoneyAmount.ToString());
 
             if (filterObj.Category.Name.Contains(selectedCategory) && (filterObj.MoneyAmount > Convert.ToInt32(selectedPriceFrom)) && (filterObj.MoneyAmount < Convert.ToInt32(selectedPriceTo)))
             {

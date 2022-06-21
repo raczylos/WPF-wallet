@@ -68,7 +68,6 @@ namespace wallet_project_WPF
         {
 
             var selectedId = TransactionCRUDlist.SelectedIndex;
-            MessageBox.Show(TransactionCRUDlist.SelectedIndex.ToString());
             _context.Remove(_context.Transactions.ToList()[selectedId]);
             _context.SaveChanges();
             TransactionCRUDlist.ItemsSource = _context.Transactions.Local.ToObservableCollection();
