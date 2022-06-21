@@ -25,30 +25,40 @@
 
             <StackPanel Grid.Row="1" >
                 <StackPanel Orientation="Horizontal">
-                    <TextBox Name="User_Name" FontFamily="Helvetica"
+                    <TextBlock FontFamily="Helvetica"
                              FontWeight="Light"
+                            Margin="10,0,0,0"
+                             FontSize="20"
+                        >Username:</TextBlock>
+                    <TextBox Name="User_Name" FontFamily="Helvetica"
+                             FontWeight="Light"                           
                              FontSize="20"
                              HorizontalAlignment="Center"
                              Foreground="Black"
                              Background="Transparent"
                              BorderThickness="0"
-                             Width="235"
+                             Width="200"
                              HorizontalContentAlignment="Center"
                              Opacity="0.5"
                              Height="25"
-                             Margin="63,0,0,0"
+                             
                              Text="{Binding Name, Mode=TwoWay}"/>
 
                 </StackPanel>
-                <Border Width="250"
+                <Border Width="215"
                         Height="2"
                         Background="Black"
                         Opacity="0.5"/>
 
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <TextBlock FontFamily="Helvetica"
+                             FontWeight="Light"
+                            Margin="10,0,0,0"
+                             FontSize="20"
+                        >Password:</TextBlock>
                     <PasswordBox Name="User_Password" FontFamily="Helvetica"
                              FontWeight="Light"
-                             Password="Password"
+                                                     
                              FontSize="20"
                              HorizontalAlignment="Center"
                              Foreground="Black"
@@ -58,18 +68,23 @@
                              HorizontalContentAlignment="Center"
                              Opacity="0.5"
                              Height="25"
-                             Margin="63,0,0,0"/>
+                             />
 
                 </StackPanel>
-                <Border Width="250"
+                <Border Width="215"
                         Height="2"
                         Background="Black"
                         Opacity="0.5"/>
 
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <TextBlock FontFamily="Helvetica"
+                             FontWeight="Light"
+                            Margin="10,0,0,0"
+                             FontSize="20"
+                        >Password:</TextBlock>
                     <PasswordBox Name="User_Password_Repeat" FontFamily="Helvetica"
                              FontWeight="Light"
-                             Password="Password"
+                             
                              FontSize="20"
                              HorizontalAlignment="Center"
                              Foreground="Black"
@@ -79,10 +94,10 @@
                              HorizontalContentAlignment="Center"
                              Opacity="0.5"
                              Height="25"
-                             Margin="63,0,0,0"/>
+                             />
 
                 </StackPanel>
-                <Border Width="250"
+                <Border Width="215"
                         Height="2"
                         Background="Black"
                         Opacity="0.5"/>

@@ -20,9 +20,11 @@ namespace wallet_project_WPF
     /// </summary>
     public partial class HistoryWindow : Window
     {
-        public HistoryWindow()
+        Wallet wallet;  
+        public HistoryWindow(Wallet wallet)
         {
             InitializeComponent();
+            this.wallet = wallet;
         }
     }
 }

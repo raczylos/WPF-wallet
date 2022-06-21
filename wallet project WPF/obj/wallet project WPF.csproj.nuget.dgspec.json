@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kalar\\Documents\\source\\WPF-wallet\\wallet project WPF\\wallet project WPF.csproj": {}
+    "C:\\Users\\48795\\Desktop\\studia\\WPF\\projekt\\WPF-wallet\\wallet project WPF\\wallet project WPF.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kalar\\Documents\\source\\WPF-wallet\\wallet project WPF\\wallet project WPF.csproj": {
+    "C:\\Users\\48795\\Desktop\\studia\\WPF\\projekt\\WPF-wallet\\wallet project WPF\\wallet project WPF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kalar\\Documents\\source\\WPF-wallet\\wallet project WPF\\wallet project WPF.csproj",
+        "projectUniqueName": "C:\\Users\\48795\\Desktop\\studia\\WPF\\projekt\\WPF-wallet\\wallet project WPF\\wallet project WPF.csproj",
         "projectName": "wallet project WPF",
-        "projectPath": "C:\\Users\\kalar\\Documents\\source\\WPF-wallet\\wallet project WPF\\wallet project WPF.csproj",
-        "packagesPath": "C:\\Users\\kalar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kalar\\Documents\\source\\WPF-wallet\\wallet project WPF\\obj\\",
+        "projectPath": "C:\\Users\\48795\\Desktop\\studia\\WPF\\projekt\\WPF-wallet\\wallet project WPF\\wallet project WPF.csproj",
+        "packagesPath": "C:\\Users\\48795\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\48795\\Desktop\\studia\\WPF\\projekt\\WPF-wallet\\wallet project WPF\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\kalar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\48795\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,17 +44,21 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
             "LiveChartsCore.SkiaSharpView.WPF": {
               "target": "Package",
               "version": "[2.0.0-beta.240, )"
             },
             "Microsoft.EntityFrameworkCore.Proxies": {
               "target": "Package",
-              "version": "[6.0.5, )"
+              "version": "[6.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[6.0.5, )"
+              "version": "[6.0.6, )"
             }
           },
           "imports": [
@@ -71,7 +79,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
