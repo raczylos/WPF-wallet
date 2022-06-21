@@ -30,7 +30,7 @@ namespace wallet_project_WPF
         // TODO: get active wallet from other view
         // for now take the first wallet in db
         public Wallet? activeWallet; 
-
+        
         public TransactionWindow()
         {
             InitializeComponent();
@@ -81,13 +81,13 @@ namespace wallet_project_WPF
             }
             _context.SaveChanges();
             refreshTransaction();
+            TransactionCRUDlist.ItemsSource = _context.Transactions.ToList();
             this.DataContext = transaction; 
             TransactionCRUDlist.Items.Refresh();
             if(isEditing) {
                 isEditing = false;
             }
             //TransactionCRUDlist.ItemsSource = _context.Transactions.ToList();
-            
         }
 
         private void Edit_Transacion(object sender, RoutedEventArgs e) {
