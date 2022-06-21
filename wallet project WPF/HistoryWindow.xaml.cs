@@ -50,41 +50,41 @@ namespace wallet_project_WPF
 
         //private readonly Transaction transaction = new Transaction();
 
-        public HistoryWindow()
-        {
-            InitializeComponent();
+        //public HistoryWindow()
+        //{
+        //    InitializeComponent();
 
-            _context.Database.EnsureCreated();
-            _context.Wallets.Load();
-            _context.Transactions.Load();
-            _context.Categories.Load();
-
-
-            //transactionList.ItemsSource = transations; 
-
-            transactionList.ItemsSource = _context.Transactions.ToList();
-
-            List<String> list = new List<String>();
-            list.Add("");
-            foreach (Transaction transaction in _context.Transactions) {
-                //MessageBox.Show(transaction.Category.Name);
-                string text5 = transaction.Category.Name;
-                //MessageBox.Show(text5);
-                list.Add(text5);
+        //    _context.Database.EnsureCreated();
+        //    _context.Wallets.Load();
+        //    _context.Transactions.Load();
+        //    _context.Categories.Load();
 
 
-            }
-            categoryComboBox.ItemsSource = list;
+        //    //transactionList.ItemsSource = transations; 
+
+        //    transactionList.ItemsSource = _context.Transactions.ToList();
+
+        //    List<String> list = new List<String>();
+        //    list.Add("");
+        //    foreach (Transaction transaction in _context.Transactions) {
+        //        //MessageBox.Show(transaction.Category.Name);
+        //        string text5 = transaction.Category.Name;
+        //        //MessageBox.Show(text5);
+        //        list.Add(text5);
+
+
+        //    }
+        //    categoryComboBox.ItemsSource = list;
             
-            //MessageBox.Show(_context.Transactions.ToList()[1].MoneyAmount.ToString());
+        //    //MessageBox.Show(_context.Transactions.ToList()[1].MoneyAmount.ToString());
 
 
-            //_context.Remove(_context.Transactions.ToList()[0]);
-            //_context.SaveChanges();
+        //    //_context.Remove(_context.Transactions.ToList()[0]);
+        //    //_context.SaveChanges();
 
-            //_context.Transactions.ToList();
+        //    //_context.Transactions.ToList();
 
-        }
+        //}
 
 
 
