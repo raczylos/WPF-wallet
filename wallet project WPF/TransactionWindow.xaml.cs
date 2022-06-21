@@ -46,9 +46,9 @@ namespace wallet_project_WPF
             categoryViewSource.Source = _context.Categories.Local.ToObservableCollection();
             Categories_Combobox.SelectedIndex = 0;
 
-            _context.Categories.Add(category);
-            _context.Categories.Add(category2);
-            _context.SaveChanges();
+            //_context.Categories.Add(category);
+            //_context.Categories.Add(category2);
+            //_context.SaveChanges();
         }
 
 
@@ -71,14 +71,16 @@ namespace wallet_project_WPF
             MessageBox.Show(TransactionCRUDlist.SelectedIndex.ToString());
             _context.Remove(_context.Transactions.ToList()[selectedId]);
             _context.SaveChanges();
-            TransactionCRUDlist.ItemsSource = _context.Transactions.ToList();
+            TransactionCRUDlist.ItemsSource = _context.Transactions.Local.ToObservableCollection();
         }
 
         private void Add_Transaction(object sender, RoutedEventArgs e) {
             _context.Add(transaction);
             _context.SaveChanges();
             transaction = new Transaction();
-            TransactionCRUDlist.ItemsSource = _context.Transactions.ToList();
+            this.DataContext = transaction; 
+            TransactionCRUDlist.Items.Refresh();
+            //TransactionCRUDlist.ItemsSource = _context.Transactions.ToList();
             
         }
 
