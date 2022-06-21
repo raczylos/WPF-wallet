@@ -13,7 +13,7 @@ namespace wallet_project_WPF {
 
         public int UserOwnerId { get; set; }
         public virtual User UserOwner { get; set; }
-        public ICollection<Transaction>? Transactions { get; set; }
+        public virtual ICollection<Transaction>? Transactions { get; set; }
             = new ObservableCollection<Transaction>();
 
     }

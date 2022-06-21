@@ -9,7 +9,7 @@ namespace wallet_project_WPF {
     public class Category {
         public int CategoryId { get; set; }
         public string? Name { get; set; }
-        public ICollection<Transaction>? Transactions { get; set; }
+        public virtual ICollection<Transaction>? Transactions { get; set; }
             = new ObservableCollection<Transaction>();
 
     }
