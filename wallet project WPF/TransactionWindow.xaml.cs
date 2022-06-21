@@ -47,6 +47,7 @@ namespace wallet_project_WPF
             Categories_Combobox.SelectedIndex = 0;
 <<<<<<< HEAD
 
+<<<<<<< HEAD
             _context.Categories.Add(category);
             _context.Categories.Add(category2);
             _context.SaveChanges();
@@ -55,6 +56,11 @@ namespace wallet_project_WPF
             //_context.Categories.Add(category2);
             //_context.SaveChanges();
 >>>>>>> a902cf3a755732522ae2ffb8540374fb71af675f
+=======
+            //_context.Categories.Add(category);
+            //_context.Categories.Add(category2);
+            //_context.SaveChanges();
+>>>>>>> 4ceee77f19d9fb3a8fbc1f2847a5bdc44822b393
         }
 
 
@@ -74,10 +80,9 @@ namespace wallet_project_WPF
         {
 
             var selectedId = TransactionCRUDlist.SelectedIndex;
-            MessageBox.Show(TransactionCRUDlist.SelectedIndex.ToString());
             _context.Remove(_context.Transactions.ToList()[selectedId]);
             _context.SaveChanges();
-            TransactionCRUDlist.ItemsSource = _context.Transactions.ToList();
+            TransactionCRUDlist.ItemsSource = _context.Transactions.Local.ToObservableCollection();
         }
 
         private void Add_Transaction(object sender, RoutedEventArgs e) {
@@ -85,7 +90,13 @@ namespace wallet_project_WPF
             _context.SaveChanges();
             transaction = new Transaction();
 <<<<<<< HEAD
+<<<<<<< HEAD
             TransactionCRUDlist.ItemsSource = _context.Transactions.ToList();
+=======
+            this.DataContext = transaction; 
+            TransactionCRUDlist.Items.Refresh();
+            //TransactionCRUDlist.ItemsSource = _context.Transactions.ToList();
+>>>>>>> 4ceee77f19d9fb3a8fbc1f2847a5bdc44822b393
             
 =======
 >>>>>>> a902cf3a755732522ae2ffb8540374fb71af675f
