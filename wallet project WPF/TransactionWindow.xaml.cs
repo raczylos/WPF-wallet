@@ -29,7 +29,7 @@ namespace wallet_project_WPF
         // TODO: get active wallet from other view
         // for now take the first wallet in db
         public Wallet? activeWallet; 
-
+        
         public TransactionWindow()
         {
             InitializeComponent();
@@ -43,6 +43,7 @@ namespace wallet_project_WPF
             _context.Categories.Load();
             activeWallet = _context.Wallets.Find(1);
             categoryViewSource.Source = _context.Categories.Local.ToObservableCollection();
+            Categories_Combobox.SelectedIndex = 0;
             //_context.Categories.Add(category);
             //_context.Categories.Add(category2);
             //_context.SaveChanges();
@@ -68,6 +69,7 @@ namespace wallet_project_WPF
         private void Add_Transaction(object sender, RoutedEventArgs e) {
             _context.Add(transaction);
             _context.SaveChanges();
+            transaction = new Transaction();
         }
 
         private void Edit_Transacion(object sender, RoutedEventArgs e) {
