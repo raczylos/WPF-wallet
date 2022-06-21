@@ -13,6 +13,8 @@
                 <RowDefinition Height="5*"/>
             </Grid.RowDefinitions>
 
+          
+
             <StackPanel VerticalAlignment="Center">
                 <TextBlock Text="wallet"
                            FontWeight="Light"
@@ -24,9 +26,14 @@
 
             <StackPanel Grid.Row="1" >
                 <StackPanel Orientation="Horizontal">
+                    <TextBlock FontFamily="Helvetica"
+                             FontWeight="Light"
+                           
+                             FontSize="20"
+                        >UserName:</TextBlock>
                     <TextBox FontFamily="Helvetica"
                              FontWeight="Light"
-                             Text="Username"
+                             Name="User_Name"
                              FontSize="20"
                              HorizontalAlignment="Center"
                              Foreground="Black"
@@ -36,7 +43,7 @@
                              HorizontalContentAlignment="Center"
                              Opacity="0.5"
                              Height="25"
-                             Margin="63,0,0,0"/>
+                           />
 
                 </StackPanel>
                 <Border Width="250"
@@ -45,9 +52,14 @@
                         Opacity="0.5"/>
 
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <TextBlock FontFamily="Helvetica"
+                             FontWeight="Light"
+                           
+                             FontSize="20"
+                        >Password:</TextBlock>
                     <PasswordBox FontFamily="Helvetica"
                              FontWeight="Light"
-                             Password="Password"
+                             Name="User_password"
                              FontSize="20"
                              HorizontalAlignment="Center"
                              Foreground="Black"
@@ -57,7 +69,7 @@
                              HorizontalContentAlignment="Center"
                              Opacity="0.5"
                              Height="25"
-                             Margin="63,0,0,0"/>
+                             />
 
                 </StackPanel>
                 <Border Width="250"
@@ -67,8 +79,8 @@
 
 
                 <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
-                    <Button Width="100" Height="40" Content="LOGIN" Margin="60,0,60,0"/>
-                    <Button Width="100" Height="40" Content="REGISTER"/>
+                    <Button Width="100" Height="40" Content="LOGIN" Margin="60,0,60,0" Click="Handle_Login_Button_Click"/>
+                    <Button Width="100" Height="40" Content="REGISTER" Click="Go_To_Register_Button_Click"/>
                 </StackPanel>
 
             </StackPanel>
