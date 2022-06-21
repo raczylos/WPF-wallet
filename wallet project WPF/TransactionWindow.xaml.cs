@@ -75,33 +75,32 @@ namespace wallet_project_WPF
         }
 
         private void Add_Transaction(object sender, RoutedEventArgs e) {
-            using (WalletContext context = new WalletContext()) {
-                //context.Database.EnsureCreated();
-                //context.Wallets.Attach(activeWallet);
-                ////context.Categories.Attach(transaction.Category);
-                //if (transaction.isCycle == true) {
-                //    transaction.date = DateTime.Now;
-                //}
-                //if (!isEditing) {
-                //    context.Add(transaction);
-                //}
-                //context.SaveChanges();
-                //refreshTransaction();
-                //this.DataContext = transaction;
-                //TransactionCRUDlist.ItemsSource = context.Transactions.Where(t => t.Wallet == activeWallet).ToList();
-                //TransactionCRUDlist.Items.Refresh();
-                //if (isEditing) {
-                //    isEditing = false;
-                //}
-            }
-            _context.Database.EnsureCreated();
+            //using (WalletContext context = new WalletContext()) {
+            //    context.Database.EnsureCreated();
+            //    context.Wallets.Attach(activeWallet);
+            //    context.Categories.Attach(transaction.Category);
+            //    if (transaction.isCycle == true) {
+            //        transaction.date = DateTime.Now;
+            //    }
+            //    if (!isEditing) {
+            //        context.Transactions.Add(transaction);
+            //    }
+            //    context.SaveChanges();
+            //    refreshTransaction();
+            //    this.DataContext = transaction;
+            //    TransactionCRUDlist.ItemsSource = context.Transactions.Where(t => t.Wallet == activeWallet).ToList();
+            //    TransactionCRUDlist.Items.Refresh();
+            //    if (isEditing) {
+            //        isEditing = false;
+            //    }
+            //}
             _context.Categories.Attach(transaction.Category);
             _context.Wallets.Attach(activeWallet);
             if (transaction.isCycle == true) {
                 transaction.date = DateTime.Now;
             }
             if (!isEditing) {
-                _context.Add(transaction);
+                _context.Transactions.Add(transaction);
             }
             _context.SaveChanges();
             refreshTransaction();

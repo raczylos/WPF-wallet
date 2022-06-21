@@ -31,7 +31,8 @@ namespace wallet_project_WPF
             _context.Categories.Load();
 
 
-            transactionList.ItemsSource = _context.Transactions.ToList();
+            transactionList.ItemsSource = _context.Transactions.Where(t => t.Wallet == wallet).ToList();
+
 
             List<String> list = new List<String>();
             list.Add("");
@@ -161,6 +162,8 @@ namespace wallet_project_WPF
         private void Change_Window_Transaction_Click(object sender, RoutedEventArgs e) {
             TransactionWindow transactionWindow = new TransactionWindow(wallet);
             transactionWindow.ShowDialog();
+            _context.Transactions.Load();
+            transactionList.ItemsSource = _context.Transactions.Where(t => t.Wallet == wallet).ToList();
         }
         private void incomingButton_Checked(object sender, RoutedEventArgs e)
         {
