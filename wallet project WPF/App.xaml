@@ -2,14 +2,9 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:wallet_project_WPF"
-<<<<<<< HEAD
-             StartupUri="HistoryWindow.xaml">
-
-=======
              StartupUri="LoginWindow.xaml"
              ShutdownMode="OnLastWindowClose">
-   
->>>>>>> 35f8930b3812576661a4e56ebb7d0347c7f57453
+ 
     <Application.Resources>
          
     </Application.Resources>
