@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="TransactionWindow" Height="450" Width="800"
         Loaded="Window_Loaded">
+    <Window.Resources>
+        <CollectionViewSource x:Key="categoryViewSource"
+    </Window.Resources>
     <Grid>
         <Border BorderBrush="Black" BorderThickness="1" Margin="267,68,256,214">
         </Border>

@@ -22,6 +22,8 @@ namespace wallet_project_WPF
     {
         private readonly WalletContext _context = new WalletContext();
         public Transaction transaction = new Transaction();
+        public Category category = new Category() { Name="zywnosc" };
+        public Category category2 = new Category() { Name="podatki" };
 
         // TODO: get active wallet from other view
         // for now take the first wallet in db
@@ -39,7 +41,15 @@ namespace wallet_project_WPF
             _context.Transactions.Load();
             _context.Categories.Load();
             activeWallet = _context.Wallets.Find(1);
-    }
+            BindCategoriesCombobox();
+            //_context.Categories.Add(category);
+            //_context.Categories.Add(category2);
+            //_context.SaveChanges();
+        }
+
+        private void BindCategoriesCombobox() {
+            Categories_Combobox.DataContext = _context.Categories.Local.ToObservableCollection();
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e) {
 
