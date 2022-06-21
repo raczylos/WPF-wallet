@@ -34,7 +34,7 @@
             <RadioButton Name="Incoming_Radio" GroupName="Incoming" Content="Wpływ" HorizontalAlignment="Left" Margin="0,12,0,0" VerticalAlignment="Top" IsChecked="{Binding isIncoming, Mode=TwoWay}"/>
             <RadioButton Name="Outgoing_Radio" GroupName="Incoming" Content="Wydatek" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,0" />
         </StackPanel>
-        <ComboBox ItemsSource="{Binding Source={StaticResource categoryViewSource} }" DisplayMemberPath="Name" SelectedValue="{Binding Category, Mode=TwoWay}" Name="Categories_Combobox" HorizontalAlignment="Left" Margin="280,122,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged" IsEditable="True" Text="Wybierz kategorię"/>
+        <ComboBox ItemsSource="{Binding Source={StaticResource categoryViewSource} }" DisplayMemberPath="Name" SelectedValue="{Binding Category, Mode=TwoWay}" Name="Categories_Combobox" HorizontalAlignment="Left" Margin="280,122,0,0" VerticalAlignment="Top" Width="120" IsEditable="True" Text="Wybierz kategorię"/>
         <CheckBox Name="Cycle_Checkbox" Content="Transakcja cykliczna" HorizontalAlignment="Left" Margin="280,149,0,0" VerticalAlignment="Top" IsChecked="{Binding IsCycle, Mode=TwoWay}"/>
 
 

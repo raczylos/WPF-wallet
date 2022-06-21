@@ -12,6 +12,33 @@ namespace wallet_project_WPF
     /// </summary>
     public partial class HistoryWindow : Window
     {
+        Wallet wallet;
+        public HistoryWindow(Wallet wallet) {
+            InitializeComponent();
+            this.wallet = wallet;
+
+            _context.Database.EnsureCreated();
+            _context.Wallets.Load();
+            _context.Transactions.Load();
+            _context.Categories.Load();
+
+
+            //transactionList.ItemsSource = transations; 
+
+            transactionList.ItemsSource = _context.Transactions.ToList();
+
+            List<String> list = new List<String>();
+            list.Add("");
+            foreach (Transaction transaction in _context.Transactions) {
+                //MessageBox.Show(transaction.Category.Name);
+                string text5 = transaction.Category.Name;
+                //MessageBox.Show(text5);
+                list.Add(text5);
+
+
+            }
+            categoryComboBox.ItemsSource = list;
+        }
 
         //Transation[] transations = new Transation[]
         //{
