@@ -22,7 +22,7 @@ namespace wallet_project_WPF
     {
         private readonly WalletContext _context = new WalletContext();
         private CollectionViewSource categoryViewSource;
-        public Transaction transaction = new Transaction() { isIncoming = false };
+        public Transaction transaction = new Transaction() { isIncoming = true };
         public Category category = new Category() { Name="zywnosc" };
         public Category category2 = new Category() { Name="podatki" };
         private bool isEditing = false;
@@ -97,7 +97,7 @@ namespace wallet_project_WPF
 
         }
         private void refreshTransaction() {
-            transaction = new Transaction() { isIncoming = false };
+            transaction = new Transaction() { isIncoming = true };
         }
 
     }
