@@ -17,7 +17,7 @@
         <Button Name="Transaction_Delete" Content="Usuń transakcję" HorizontalAlignment="Left" Margin="30,322,0,0" VerticalAlignment="Top" Height="26" Width="116" Click="Delete_Transaction"/>
         <StackPanel Margin="396,68,256,317">
             <RadioButton Name="Incoming_Radio" Content="Wpływ" HorizontalAlignment="Left" Margin="0,12,0,0" VerticalAlignment="Top" IsChecked="{Binding isIncoming, Mode=TwoWay}"/>
-            <RadioButton Name="Outgoing_Radio" Content="Wydatek" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,0"/ isChecked="{False}">
+            <RadioButton Name="Outgoing_Radio" Content="Wydatek" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,0" />
         </StackPanel>
         <ComboBox Name="Categories_Combobox" HorizontalAlignment="Left" Margin="280,122,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged" IsEditable="True" Text="Wybierz kategorię"/>
         <CheckBox Name="Cycle_Checkbox" Content="Transakcja cykliczna" HorizontalAlignment="Left" Margin="280,149,0,0" VerticalAlignment="Top" IsChecked="{Binding IsCycle, Mode=TwoWay}"/>
