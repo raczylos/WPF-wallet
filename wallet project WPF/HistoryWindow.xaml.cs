@@ -19,37 +19,72 @@ namespace wallet_project_WPF
         private readonly WalletContext _context = new WalletContext();
 
 
-            Wallet wallet;
-            public HistoryWindow(Wallet wallet) {
+        Wallet wallet;
+        public HistoryWindow(Wallet wallet) {
 
-                InitializeComponent();
-                this.wallet = wallet;
+            InitializeComponent();
+            this.wallet = wallet;
 
-                _context.Database.EnsureCreated();
-                _context.Wallets.Load();
-                _context.Transactions.Load();
-                _context.Categories.Load();
-
-
-                transactionList.ItemsSource = _context.Transactions.ToList();
-
-                List<String> list = new List<String>();
-                list.Add("");
-
-                foreach (Category category in _context.Categories.ToList())
-                {
-
-                    list.Add(category.Name);
-
-                }
+            _context.Database.EnsureCreated();
+            _context.Wallets.Load();
+            _context.Transactions.Load();
+            _context.Categories.Load();
 
 
-                categoryComboBox.ItemsSource = list;
+            transactionList.ItemsSource = _context.Transactions.ToList();
 
+            List<String> list = new List<String>();
+            list.Add("");
 
+            foreach (Category category in _context.Categories.ToList())
+            {
+
+                list.Add(category.Name);
 
             }
-        
+
+
+            categoryComboBox.ItemsSource = list;
+
+
+        }
+
+        //public HistoryWindow() {
+        //    InitializeComponent();
+
+        //    _context.Database.EnsureCreated();
+        //    _context.Wallets.Load();
+        //    _context.Transactions.Load();
+        //    _context.Categories.Load();
+
+
+        //    //transactionList.ItemsSource = transations; 
+
+        //    transactionList.ItemsSource = _context.Transactions.ToList();
+
+        //    List<String> list = new List<String>();
+        //    list.Add("");
+        //    foreach (Transaction transaction in _context.Transactions) {
+        //        //MessageBox.Show(transaction.Category.Name);
+        //        string text5 = transaction.Category.Name;
+        //        //MessageBox.Show(text5);
+        //        list.Add(text5);
+
+
+        //    }
+        //    categoryComboBox.ItemsSource = list;
+
+        //    //MessageBox.Show(_context.Transactions.ToList()[1].MoneyAmount.ToString());
+
+
+        //    //_context.Remove(_context.Transactions.ToList()[0]);
+        //    //_context.SaveChanges();
+
+        //    //_context.Transactions.ToList();
+
+        //}
+
+
 
   
 
@@ -82,8 +117,6 @@ namespace wallet_project_WPF
             {
                 selectedPriceTo = Int32.MaxValue.ToString();
             }
-
-
 
             if (filterObj.Category.Name.Contains(selectedCategory) && (filterObj.MoneyAmount > Convert.ToInt32(selectedPriceFrom)) && (filterObj.MoneyAmount < Convert.ToInt32(selectedPriceTo)))
             {
@@ -125,6 +158,10 @@ namespace wallet_project_WPF
             transactionList.Items.Filter = MyFilter;
         }
 
+        private void Change_Window_Transaction_Click(object sender, RoutedEventArgs e) {
+            TransactionWindow transactionWindow = new TransactionWindow(wallet);
+            transactionWindow.ShowDialog();
+        }
         private void incomingButton_Checked(object sender, RoutedEventArgs e)
         {
             expenseButton.IsChecked = false;
