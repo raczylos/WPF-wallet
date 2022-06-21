@@ -5,25 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wallet_project_WPF"
         mc:Ignorable="d"
-        Title="HistoryWindow" Height="450" Width="800" MinHeight="450" MinWidth="800">
+        Title="HistoryWindow" Height="460" Width="800" MinHeight="460" MinWidth="800">
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="99*"/>
             <ColumnDefinition Width="61*"/>
         </Grid.ColumnDefinitions>
-        <ListView x:Name="transactionList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,199,10,10" SelectionChanged="ListView_SelectionChanged" Grid.ColumnSpan="2">
+        
+        <ListView x:Name="transactionList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,174,10,10" Grid.ColumnSpan="2">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
                         <GridViewColumn Header="Title" Width="Auto" DisplayMemberBinding="{Binding title}"/>
                         <GridViewColumn Header="Price" Width="Auto" DisplayMemberBinding="{Binding MoneyAmount}"/>
                         <GridViewColumn Header="Category" Width="Auto" DisplayMemberBinding="{Binding Category.Name}"/>
+                        <GridViewColumn Header="isIncoming" Width="Auto" DisplayMemberBinding="{Binding isIncoming}"/>
                     </GridView.Columns>
                 </GridView>
             </ListView.View>
         </ListView>
-        <GroupBox Header="Filters" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="159">
+        <GroupBox Header="Filtery" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="159">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="289*"/>
@@ -41,8 +43,8 @@
                 <Grid Margin="0,49,0,45" Grid.ColumnSpan="2">
                     <Label Content="Kategorie:" HorizontalAlignment="Left"  VerticalAlignment="Center" Margin="10,0,0,0"/>
                     <ComboBox x:Name="categoryComboBox" SelectedIndex="0" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="138" Height="21" Margin="95,0,0,0" SelectionChanged="CategoriesChanged"/>
-                    <RadioButton x:Name="proceedButton" GroupName="RadioButtons" Content="Wpływ" IsChecked="True" HorizontalAlignment="Left" Margin="238,0,0,0" VerticalAlignment="Center" />
-                    <RadioButton x:Name="expenseButton" GroupName="RadioButtons" Content="Wydatek" HorizontalAlignment="Left" Margin="298,0,0,0" VerticalAlignment="Center"/>
+                    <CheckBox x:Name="incomingButton"  Content="Wpływ" HorizontalAlignment="Left" Margin="238,0,0,0" VerticalAlignment="Center" Checked="incomingButton_Checked" Unchecked="incomingButton_Unchecked"/>
+                    <CheckBox x:Name="expenseButton"  Content="Wydatek" HorizontalAlignment="Left" Margin="298,0,0,0" VerticalAlignment="Center" Checked="expenseButton_Checked" Unchecked="expenseButton_Unchecked"/>
                 </Grid>
                 <Grid Margin="0,10,0,92" Grid.ColumnSpan="2">
                     <Label Content="Zakres kwot:" HorizontalAlignment="Left"  VerticalAlignment="Center" Margin="10,0,0,0"/>
@@ -52,6 +54,13 @@
                 </Grid>
             </Grid>
         </GroupBox>
-        <Button Content="Zatwierdź" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top" Width="385"/>
+        <GroupBox Header="Wyszukiwanie" Margin="400,10,10,0" Grid.ColumnSpan="2" VerticalAlignment="Top" >
+            <Grid>
+                <TextBox x:Name="SearchTextBox"  HorizontalContentAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" Height="24" Margin="10,0,10,0" />
+            </Grid>
+        </GroupBox>
+        <Grid Margin="400,141,0,0" VerticalAlignment="Top" Height="28" HorizontalAlignment="Left" Width="60"  >
+            <Button x:Name="DownloadButton" Content="Download" HorizontalAlignment="Center"  Margin="0,2,0,2" Click="DownloadButton_Click" />
+        </Grid>
     </Grid>
 </Window>
