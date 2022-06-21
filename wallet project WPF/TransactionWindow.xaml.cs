@@ -22,9 +22,10 @@ namespace wallet_project_WPF
     {
         private readonly WalletContext _context = new WalletContext();
         private CollectionViewSource categoryViewSource;
-        public Transaction transaction = new Transaction();
+        public Transaction transaction = new Transaction() { isIncoming = false };
         public Category category = new Category() { Name="zywnosc" };
         public Category category2 = new Category() { Name="podatki" };
+        private bool isEditing = false;
 
         // TODO: get active wallet from other view
         // for now take the first wallet in db
@@ -33,9 +34,10 @@ namespace wallet_project_WPF
         public TransactionWindow()
         {
             InitializeComponent();
+            refreshTransaction();
             this.DataContext = transaction;
             categoryViewSource = (CollectionViewSource)FindResource(nameof(categoryViewSource));
-            TransactionCRUDlist.ItemsSource = _context.Transactions.ToList();
+            TransactionCRUDlist.ItemsSource = _context.Transactions.Local.ToObservableCollection();
         }
         private void Window_Loaded(object sender, RoutedEventArgs e) {
             _context.Database.EnsureCreated();
@@ -74,18 +76,28 @@ namespace wallet_project_WPF
         }
 
         private void Add_Transaction(object sender, RoutedEventArgs e) {
-            _context.Add(transaction);
+            if(!isEditing) {
+                _context.Add(transaction);
+            }
             _context.SaveChanges();
-            transaction = new Transaction();
+            refreshTransaction();
             this.DataContext = transaction; 
             TransactionCRUDlist.Items.Refresh();
+            if(isEditing) {
+                isEditing = false;
+            }
             //TransactionCRUDlist.ItemsSource = _context.Transactions.ToList();
             
         }
 
         private void Edit_Transacion(object sender, RoutedEventArgs e) {
-           
+            var selectedId = TransactionCRUDlist.SelectedIndex;
+            transaction = _context.Transactions.ToList()[selectedId];
+            this.DataContext = transaction;
 
+        }
+        private void refreshTransaction() {
+            transaction = new Transaction() { isIncoming = false };
         }
 
     }
