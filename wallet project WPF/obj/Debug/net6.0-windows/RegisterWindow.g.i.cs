@@ -85,7 +85,7 @@ namespace wallet_project_WPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/wallet project WPF;component/registerwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/wallet project WPF;V1.0.0.0;component/registerwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\RegisterWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
