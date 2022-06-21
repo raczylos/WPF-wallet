@@ -22,7 +22,7 @@ namespace wallet_project_WPF
     {
         private readonly WalletContext _context = new WalletContext();
         private CollectionViewSource categoryViewSource;
-        public Transaction transaction = new Transaction() { isIncoming = true };
+        public Transaction transaction = new Transaction() { isIncoming = true, isCycle = false };
         public Category category = new Category() { Name="zywnosc" };
         public Category category2 = new Category() { Name="podatki" };
         private bool isEditing = false;
@@ -53,19 +53,6 @@ namespace wallet_project_WPF
             //_context.SaveChanges();
         }
 
-
-        private void Button_Click(object sender, RoutedEventArgs e) {
-
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
-
-        }
-
-        private void CheckBox_Checked(object sender, RoutedEventArgs e) {
-
-        }
-
         private void Delete_Transaction(object sender, RoutedEventArgs e)
         {
 
@@ -76,6 +63,9 @@ namespace wallet_project_WPF
         }
 
         private void Add_Transaction(object sender, RoutedEventArgs e) {
+            if(transaction.isCycle == true) {
+                transaction.date = DateTime.Now;
+            }
             if(!isEditing) {
                 _context.Add(transaction);
             }
@@ -91,13 +81,14 @@ namespace wallet_project_WPF
         }
 
         private void Edit_Transacion(object sender, RoutedEventArgs e) {
+            isEditing = true;
             var selectedId = TransactionCRUDlist.SelectedIndex;
             transaction = _context.Transactions.ToList()[selectedId];
             this.DataContext = transaction;
-
         }
+
         private void refreshTransaction() {
-            transaction = new Transaction() { isIncoming = true };
+            transaction = new Transaction() { isIncoming = true, isCycle = false };
         }
 
     }
