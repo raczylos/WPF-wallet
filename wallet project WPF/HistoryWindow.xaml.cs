@@ -1,17 +1,9 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace wallet_project_WPF
 {
@@ -20,41 +12,70 @@ namespace wallet_project_WPF
     /// </summary>
     public partial class HistoryWindow : Window
     {
-        Transation[] transations = new Transation[]
-        {
-            new Transation("test1", 100, "kredyt"),
-            new Transation("test2", 200, "produkty spozywcze")
-        };
 
-        private readonly Transaction transaction = new Transaction();
+        //Transation[] transations = new Transation[]
+        //{
+        //    new Transation("test1", 100, "kredyt"),
+        //    new Transation("test2", 200, "produkty spozywcze")
+        //};
+
+        private readonly WalletContext _context = new WalletContext();
+
+        //private readonly Transaction transaction = new Transaction();
 
         public HistoryWindow()
         {
             InitializeComponent();
 
-            transactionList.ItemsSource = transations;
-         
+            _context.Database.EnsureCreated();
+            _context.Wallets.Load();
+            _context.Transactions.Load();
+            _context.Categories.Load();
+
+
+            //transactionList.ItemsSource = transations; 
+
+            transactionList.ItemsSource = _context.Transactions.ToList();
+
             List<String> list = new List<String>();
             list.Add("");
-            foreach (Transation transation in transations)
-            {
+            //foreach (Transaction transaction in _context.Transactions)
+            //{
+            //    try
+            //    {
+            //        //MessageBox.Show(transaction.Category.Name);
+            //        string text5 = transaction.Category.Name;
+            //        MessageBox.Show(text5);
+            //        list.Add(text5);
+            //    }
+            //    catch
+            //    {
 
-                list.Add(transation.category);
+            //    }
                 
-            }
+
+            //}
             categoryComboBox.ItemsSource = list;
 
-            
+            //MessageBox.Show(_context.Transactions.ToList()[1].MoneyAmount.ToString());
+
+
+            //_context.Remove(_context.Transactions.ToList()[0]);
+            //_context.SaveChanges();
+
+            //_context.Transactions.ToList();
 
         }
 
-       
-        
+
+
+
+
 
         private bool MyFilter(object obj)
         {
-            //MessageBox.Show("robie filtr");
-            var filterObj = obj as Transation;
+
+            var filterObj = obj as Transaction;
             var text = categoryComboBox.SelectedItem.ToString();
 
 
@@ -63,13 +84,14 @@ namespace wallet_project_WPF
             var selectedPriceTo = priceTo.Text;
 
             //return filterObj.category.Contains(categoryComboBox.Text);
+            
 
             if (selectedCategory == "" && selectedPriceFrom == "" && selectedPriceTo == "")
             {
                 return true;
             }
 
-            if(selectedPriceFrom == "")
+            if (selectedPriceFrom == "")
             {
                 selectedPriceFrom = "0";
             }
@@ -80,11 +102,13 @@ namespace wallet_project_WPF
             }
 
 
-            if (filterObj.category.Contains(selectedCategory) && (filterObj.price > Convert.ToInt32(selectedPriceFrom)) && (filterObj.price < Convert.ToInt32(selectedPriceTo)))
+            MessageBox.Show(filterObj.MoneyAmount.ToString());
+
+            if (filterObj.Category.Name.Contains(selectedCategory) && (filterObj.MoneyAmount > Convert.ToInt32(selectedPriceFrom)) && (filterObj.MoneyAmount < Convert.ToInt32(selectedPriceTo)))
             {
                 return true;
             }
-            
+
 
 
             return false;
@@ -103,7 +127,7 @@ namespace wallet_project_WPF
 
         private void CategoriesChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+
             transactionList.Items.Filter = MyFilter;
             //categoryComboBox.ItemsSource
 

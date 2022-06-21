@@ -35,6 +35,7 @@ namespace wallet_project_WPF
             InitializeComponent();
             this.DataContext = transaction;
             categoryViewSource = (CollectionViewSource)FindResource(nameof(categoryViewSource));
+            TransactionCRUDlist.ItemsSource = _context.Transactions.ToList();
         }
         private void Window_Loaded(object sender, RoutedEventArgs e) {
             _context.Database.EnsureCreated();
@@ -43,9 +44,11 @@ namespace wallet_project_WPF
             _context.Categories.Load();
             activeWallet = _context.Wallets.Find(1);
             categoryViewSource.Source = _context.Categories.Local.ToObservableCollection();
-            //_context.Categories.Add(category);
-            //_context.Categories.Add(category2);
-            //_context.SaveChanges();
+            Categories_Combobox.SelectedIndex = 0;
+
+            _context.Categories.Add(category);
+            _context.Categories.Add(category2);
+            _context.SaveChanges();
         }
 
 
@@ -61,16 +64,26 @@ namespace wallet_project_WPF
 
         }
 
-        private void Delete_Transaction(object sender, RoutedEventArgs e) {
+        private void Delete_Transaction(object sender, RoutedEventArgs e)
+        {
 
+            var selectedId = TransactionCRUDlist.SelectedIndex;
+            MessageBox.Show(TransactionCRUDlist.SelectedIndex.ToString());
+            _context.Remove(_context.Transactions.ToList()[selectedId]);
+            _context.SaveChanges();
+            TransactionCRUDlist.ItemsSource = _context.Transactions.ToList();
         }
 
         private void Add_Transaction(object sender, RoutedEventArgs e) {
             _context.Add(transaction);
             _context.SaveChanges();
+            transaction = new Transaction();
+            TransactionCRUDlist.ItemsSource = _context.Transactions.ToList();
+            
         }
 
         private void Edit_Transacion(object sender, RoutedEventArgs e) {
+           
 
         }
 

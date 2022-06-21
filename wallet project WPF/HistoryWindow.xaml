@@ -17,8 +17,8 @@
                 <GridView>
                     <GridView.Columns>
                         <GridViewColumn Header="Title" Width="Auto" DisplayMemberBinding="{Binding title}"/>
-                        <GridViewColumn Header="Price" Width="Auto" DisplayMemberBinding="{Binding price}"/>
-                        <GridViewColumn Header="Category" Width="Auto" DisplayMemberBinding="{Binding category}"/>
+                        <GridViewColumn Header="Price" Width="Auto" DisplayMemberBinding="{Binding MoneyAmount}"/>
+                        <GridViewColumn Header="Category" Width="Auto" DisplayMemberBinding="{Binding Category.Name}"/>
                     </GridView.Columns>
                 </GridView>
             </ListView.View>
