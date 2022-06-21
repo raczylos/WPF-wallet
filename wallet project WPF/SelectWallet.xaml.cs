@@ -72,7 +72,7 @@ namespace wallet_project_WPF
         private void Confirm_Wallet_Button_Click(object sender, RoutedEventArgs e)
         {
             Wallet selected = Wallet_List.SelectedItem as Wallet;
-            if (selected == null)
+            if (selected != null)
             {
                 HistoryWindow historyWindow = new HistoryWindow(selected);
                 historyWindow.Show();
