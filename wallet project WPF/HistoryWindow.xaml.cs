@@ -26,13 +26,14 @@ namespace wallet_project_WPF
             new Transation("test2", 200, "produkty spozywcze")
         };
 
+        private readonly Transaction transaction = new Transaction();
+
         public HistoryWindow()
         {
             InitializeComponent();
 
             transactionList.ItemsSource = transations;
-            //categoryComboBox.ItemsSource = new string[] { "Title", "Price", "Category" };
-            //categoryComboBox.ItemsSource = typeof(Transation).GetProperties().Select((k) => k.Name);
+         
             List<String> list = new List<String>();
             list.Add("");
             foreach (Transation transation in transations)
