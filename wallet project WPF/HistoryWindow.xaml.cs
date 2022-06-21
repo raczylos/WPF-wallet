@@ -35,7 +35,6 @@ namespace wallet_project_WPF
                 //MessageBox.Show(text5);
                 list.Add(text5);
 
-
             }
             categoryComboBox.ItemsSource = list;
         }
@@ -50,41 +49,40 @@ namespace wallet_project_WPF
 
         //private readonly Transaction transaction = new Transaction();
 
-        //public HistoryWindow()
-        //{
-        //    InitializeComponent();
+        public HistoryWindow() {
+            InitializeComponent();
 
-        //    _context.Database.EnsureCreated();
-        //    _context.Wallets.Load();
-        //    _context.Transactions.Load();
-        //    _context.Categories.Load();
-
-
-        //    //transactionList.ItemsSource = transations; 
-
-        //    transactionList.ItemsSource = _context.Transactions.ToList();
-
-        //    List<String> list = new List<String>();
-        //    list.Add("");
-        //    foreach (Transaction transaction in _context.Transactions) {
-        //        //MessageBox.Show(transaction.Category.Name);
-        //        string text5 = transaction.Category.Name;
-        //        //MessageBox.Show(text5);
-        //        list.Add(text5);
+            _context.Database.EnsureCreated();
+            _context.Wallets.Load();
+            _context.Transactions.Load();
+            _context.Categories.Load();
 
 
-        //    }
-        //    categoryComboBox.ItemsSource = list;
-            
-        //    //MessageBox.Show(_context.Transactions.ToList()[1].MoneyAmount.ToString());
+            //transactionList.ItemsSource = transations; 
+
+            transactionList.ItemsSource = _context.Transactions.ToList();
+
+            List<String> list = new List<String>();
+            list.Add("");
+            foreach (Transaction transaction in _context.Transactions) {
+                //MessageBox.Show(transaction.Category.Name);
+                string text5 = transaction.Category.Name;
+                //MessageBox.Show(text5);
+                list.Add(text5);
 
 
-        //    //_context.Remove(_context.Transactions.ToList()[0]);
-        //    //_context.SaveChanges();
+            }
+            categoryComboBox.ItemsSource = list;
 
-        //    //_context.Transactions.ToList();
+            //MessageBox.Show(_context.Transactions.ToList()[1].MoneyAmount.ToString());
 
-        //}
+
+            //_context.Remove(_context.Transactions.ToList()[0]);
+            //_context.SaveChanges();
+
+            //_context.Transactions.ToList();
+
+        }
 
 
 
@@ -120,8 +118,6 @@ namespace wallet_project_WPF
                 selectedPriceTo = "2147483647";
             }
 
-
-            //MessageBox.Show(filterObj.MoneyAmount.ToString());
 
             if (filterObj.Category.Name.Contains(selectedCategory) && (filterObj.MoneyAmount > Convert.ToInt32(selectedPriceFrom)) && (filterObj.MoneyAmount < Convert.ToInt32(selectedPriceTo)))
             {
@@ -162,6 +158,11 @@ namespace wallet_project_WPF
         private void priceTo_TextChanged(object sender, TextChangedEventArgs e)
         {
             transactionList.Items.Filter = MyFilter;
+        }
+
+        private void Change_Window_Transaction_Click(object sender, RoutedEventArgs e) {
+            TransactionWindow transactionWindow = new TransactionWindow(wallet);
+            transactionWindow.ShowDialog();
         }
     }
 }
