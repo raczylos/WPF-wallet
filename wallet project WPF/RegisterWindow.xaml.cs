@@ -34,6 +34,9 @@ namespace wallet_project_WPF
                 }
                 _context.Users.Add(user);
                 _context.SaveChanges();
+                SelectWallet selectWalletWindow = new SelectWallet();
+                selectWalletWindow.DataContext = user;
+                selectWalletWindow.ShowDialog();
             }
 
         }
