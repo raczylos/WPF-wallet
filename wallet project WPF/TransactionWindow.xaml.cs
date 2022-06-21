@@ -21,6 +21,7 @@ namespace wallet_project_WPF
     public partial class TransactionWindow : Window
     {
         private readonly WalletContext _context = new WalletContext();
+        private CollectionViewSource categoryViewSource;
         public Transaction transaction = new Transaction();
         public Category category = new Category() { Name="zywnosc" };
         public Category category2 = new Category() { Name="podatki" };
@@ -31,9 +32,9 @@ namespace wallet_project_WPF
 
         public TransactionWindow()
         {
-            this.DataContext = transaction;
-
             InitializeComponent();
+            this.DataContext = transaction;
+            categoryViewSource = (CollectionViewSource)FindResource(nameof(categoryViewSource));
         }
         private void Window_Loaded(object sender, RoutedEventArgs e) {
             _context.Database.EnsureCreated();
@@ -41,15 +42,12 @@ namespace wallet_project_WPF
             _context.Transactions.Load();
             _context.Categories.Load();
             activeWallet = _context.Wallets.Find(1);
-            BindCategoriesCombobox();
+            categoryViewSource.Source = _context.Categories.Local.ToObservableCollection();
             //_context.Categories.Add(category);
             //_context.Categories.Add(category2);
             //_context.SaveChanges();
         }
 
-        private void BindCategoriesCombobox() {
-            Categories_Combobox.DataContext = _context.Categories.Local.ToObservableCollection();
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e) {
 
