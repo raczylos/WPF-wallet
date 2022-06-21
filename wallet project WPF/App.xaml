@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:wallet_project_WPF"
              StartupUri="LoginWindow.xaml"
              ShutdownMode="OnLastWindowClose">
-   
+ 
     <Application.Resources>
          
     </Application.Resources>

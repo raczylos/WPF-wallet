@@ -51,22 +51,38 @@ namespace wallet_project_WPF
         private void Edit_Wallet_Button_Click(object sender, RoutedEventArgs e)
         {
             Wallet toEdit = Wallet_List.SelectedItem as Wallet;
-            EditWalletWindow editWalletWindow = new EditWalletWindow(toEdit);
-            editWalletWindow.ShowDialog();
-            using (WalletContext _context = new WalletContext())
+            if (toEdit != null)
             {
-                List<Wallet> wallets = _context.Wallets.Where(wallet => wallet.UserOwner == user).ToList();
-                Wallet_List.ItemsSource = wallets;
+                EditWalletWindow editWalletWindow = new EditWalletWindow(toEdit);
+                editWalletWindow.ShowDialog();
+                using (WalletContext _context = new WalletContext())
+                {
+                    List<Wallet> wallets = _context.Wallets.Where(wallet => wallet.UserOwner == user).ToList();
+                    Wallet_List.ItemsSource = wallets;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Choose a wallet", "Wallet error ", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
+
         }
-      
+
         private void Confirm_Wallet_Button_Click(object sender, RoutedEventArgs e)
         {
             Wallet selected = Wallet_List.SelectedItem as Wallet;
-            HistoryWindow historyWindow = new HistoryWindow(selected);
-            historyWindow.Show();
-            this.Close();
+            if (selected != null)
+            {
+                HistoryWindow historyWindow = new HistoryWindow(selected);
+                historyWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Choose a wallet", "Wallet error ", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
         }
         private void Add_Wallet_Button_Click(object sender, RoutedEventArgs e)
         {

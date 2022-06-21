@@ -61,11 +61,11 @@ namespace wallet_project_WPF
                     MessageBox.Show("Password lenght must be at least 6 ", "Password error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
 
-                _context.Users.Add(user);
-                _context.SaveChanges();
-                SelectWallet selectWalletWindow = new SelectWallet(user);
-                selectWalletWindow.DataContext = user;
-                selectWalletWindow.ShowDialog();
+                //_context.Users.Add(user);
+                //_context.SaveChanges();
+                //SelectWallet selectWalletWindow = new SelectWallet(user);
+                //selectWalletWindow.DataContext = user;
+                //selectWalletWindow.ShowDialog();
             }
 
         }
