@@ -6689,19 +6689,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kalar\\.nuget\\packages\\": {}
+    "C:\\Users\\Sebastian\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kalar\\Documents\\source\\WPF-wallet\\wallet project WPF\\wallet project WPF.csproj",
+      "projectUniqueName": "C:\\Users\\Sebastian\\Documents\\projects\\wallet project WPF\\wallet project WPF\\wallet project WPF.csproj",
       "projectName": "wallet project WPF",
-      "projectPath": "C:\\Users\\kalar\\Documents\\source\\WPF-wallet\\wallet project WPF\\wallet project WPF.csproj",
-      "packagesPath": "C:\\Users\\kalar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kalar\\Documents\\source\\WPF-wallet\\wallet project WPF\\obj\\",
+      "projectPath": "C:\\Users\\Sebastian\\Documents\\projects\\wallet project WPF\\wallet project WPF\\wallet project WPF.csproj",
+      "packagesPath": "C:\\Users\\Sebastian\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Sebastian\\Documents\\projects\\wallet project WPF\\wallet project WPF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kalar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Sebastian\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6758,7 +6758,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
