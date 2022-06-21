@@ -13,5 +13,6 @@ namespace wallet_project_WPF
     /// </summary>
     public partial class App : Application
     {
+      
     }
 }
