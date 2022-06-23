@@ -203,6 +203,7 @@ namespace wallet_project_WPF
             transactionList.Items.Filter = MyFilter;
         }
 
+
         private void ExportToXLSX_Button_Click(object sender, RoutedEventArgs e) {
             List<Transaction> transactions = _context.Transactions.Where(t => t.Wallet == wallet).ToList();
             WorkBook workBook = WorkBook.Create(ExcelFileFormat.XLSX);
@@ -220,5 +221,6 @@ namespace wallet_project_WPF
             workBook.SaveAs("transaction_history.xlsx");
             MessageBox.Show("Export to xlsx was successful");
         }
+
     }
 }

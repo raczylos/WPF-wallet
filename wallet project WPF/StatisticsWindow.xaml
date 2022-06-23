@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:wallet_project_WPF"
         xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
         mc:Ignorable="d"
-        Title="StatisticsWindow" Height="450" Width="800">
+        Title="StatisticsWindow" Height="450" Width="800"
+         Style="{DynamicResource CustomWindowStyle}">
     <Grid>
         <!--<lvc:PieChart Series="{Binding Series}"></lvc:PieChart>-->
         <Label Content="Żywność:" HorizontalAlignment="Left" Margin="503,150,0,0" VerticalAlignment="Top" FontWeight="Normal" Foreground="#FFD3D40A"/>

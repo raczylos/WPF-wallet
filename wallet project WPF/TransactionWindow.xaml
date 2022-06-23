@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wallet_project_WPF"
         mc:Ignorable="d"
+         Style="{DynamicResource CustomWindowStyle}"
         Title="TransactionWindow" Height="500" Width="800" MinHeight="500" MinWidth="800"
         Loaded="Window_Loaded">
     <Window.Resources>
