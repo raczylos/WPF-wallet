@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.Entity.Migrations;
 
 namespace wallet_project_WPF
 {
@@ -20,15 +21,11 @@ namespace wallet_project_WPF
     /// </summary>
     public partial class TransactionWindow : Window
     {
-        private readonly WalletContext _context = new WalletContext();
+        private WalletContext _context = new WalletContext();
         private CollectionViewSource categoryViewSource;
         public Transaction transaction = new Transaction() { isIncoming = true, isCycle = false };
-        //public Category category = new Category() { Name="zywnosc" };
-        //public Category category2 = new Category() { Name="podatki" };
         private bool isEditing = false;
 
-        // TODO: get active wallet from other view
-        // for now take the first wallet in db
         public Wallet? activeWallet; 
 
         public TransactionWindow(Wallet wallet) {
@@ -51,12 +48,9 @@ namespace wallet_project_WPF
 
         private void Window_Loaded(object sender, RoutedEventArgs e) {
             _context.Database.EnsureCreated();
-            //_context.Wallets.Load();
             _context.Transactions.Load();
             _context.Categories.Load();
-            //_context.Wallets.Attach(activeWallet);
 
-            //activeWallet = _context.Wallets.Find(1);
             categoryViewSource.Source = _context.Categories.Local.ToObservableCollection();
             Categories_Combobox.SelectedIndex = 0;
             TransactionCRUDlist.ItemsSource = _context.Transactions.Where(t => t.Wallet == activeWallet).ToList();
@@ -71,36 +65,26 @@ namespace wallet_project_WPF
             var selectedId = TransactionCRUDlist.SelectedIndex;
             _context.Remove(_context.Transactions.ToList()[selectedId]);
             _context.SaveChanges();
-            TransactionCRUDlist.ItemsSource = _context.Transactions.Local.ToObservableCollection();
+            TransactionCRUDlist.ItemsSource = _context.Transactions.Where(t => t.Wallet == activeWallet).ToList();
         }
 
         private void Add_Transaction(object sender, RoutedEventArgs e) {
-            //using (WalletContext context = new WalletContext()) {
-            //    context.Database.EnsureCreated();
-            //    context.Wallets.Attach(activeWallet);
-            //    context.Categories.Attach(transaction.Category);
-            //    if (transaction.isCycle == true) {
-            //        transaction.date = DateTime.Now;
-            //    }
-            //    if (!isEditing) {
-            //        context.Transactions.Add(transaction);
-            //    }
-            //    context.SaveChanges();
-            //    refreshTransaction();
-            //    this.DataContext = transaction;
-            //    TransactionCRUDlist.ItemsSource = context.Transactions.Where(t => t.Wallet == activeWallet).ToList();
-            //    TransactionCRUDlist.Items.Refresh();
-            //    if (isEditing) {
-            //        isEditing = false;
-            //    }
-            //}
+            _context = new WalletContext();
             _context.Categories.Attach(transaction.Category);
-            _context.Wallets.Attach(activeWallet);
-            if (transaction.isCycle == true) {
-                transaction.date = DateTime.Now;
-            }
             if (!isEditing) {
+                _context.Wallets.Attach(activeWallet);
                 _context.Transactions.Add(transaction);
+            }
+            else {
+                _context.Transactions.Update(transaction);
+                _context.Entry(transaction).State = EntityState.Modified;
+            }
+            transaction.date = DateTime.Now;
+            if(transaction.isIncoming == true) {
+                activeWallet.Balance += transaction.MoneyAmount;
+            }
+            else {
+                activeWallet.Balance -= transaction.MoneyAmount;
             }
             _context.SaveChanges();
             refreshTransaction();
@@ -110,14 +94,12 @@ namespace wallet_project_WPF
             if (isEditing) {
                 isEditing = false;
             }
-
-            //TransactionCRUDlist.ItemsSource = _context.Transactions.ToList();
         }
 
         private void Edit_Transaction(object sender, RoutedEventArgs e) {
             isEditing = true;
             var selectedId = TransactionCRUDlist.SelectedIndex;
-            transaction = _context.Transactions.ToList()[selectedId];
+            transaction = _context.Transactions.Where(t => t.Wallet == activeWallet).ToList()[selectedId];
             this.DataContext = transaction;
         }
 
@@ -126,12 +108,10 @@ namespace wallet_project_WPF
         }
 
         private void Category_Add_Click(object sender, RoutedEventArgs e) {
-            using (WalletContext context = new WalletContext()) { 
-                Category category = new Category() { Name=Category_Name.Text };
-                context.Categories.Add(category);
-                context.SaveChanges();
-                Categories_Combobox.Items.Refresh();
-            }
+            Category category = new Category() { Name = Category_Name.Text };
+            _context.Categories.Add(category);
+            _context.SaveChanges();
+            Categories_Combobox.Items.Refresh();
         }
     }
 }

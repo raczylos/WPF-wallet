@@ -47,7 +47,6 @@ namespace wallet_project_WPF
 
             categoryComboBox.ItemsSource = list;
 
-
         }
 
         //public HistoryWindow() {
@@ -102,9 +101,9 @@ namespace wallet_project_WPF
             bool? isIncoming = incomingButton.IsChecked;
             bool? isExpense = expenseButton.IsChecked;
 
-            //var searchBox = SearchTextBox.Text;
+            var searchBox = SearchTextBox.Text;
 
-            if (selectedCategory == "" && selectedPriceFrom == "" && selectedPriceTo == "" && isIncoming == false && isExpense == false)
+            if (selectedCategory == "" && selectedPriceFrom == "" && selectedPriceTo == "" && isIncoming == false && isExpense == false && searchBox == "")
             {
                 return true;
             }
@@ -119,7 +118,7 @@ namespace wallet_project_WPF
                 selectedPriceTo = Int32.MaxValue.ToString();
             }
 
-            if (filterObj.Category.Name.Contains(selectedCategory) && (filterObj.MoneyAmount > Convert.ToInt32(selectedPriceFrom)) && (filterObj.MoneyAmount < Convert.ToInt32(selectedPriceTo)))
+            if (filterObj.Category.Name.Contains(selectedCategory) && (filterObj.MoneyAmount > Convert.ToInt32(selectedPriceFrom)) && (filterObj.MoneyAmount < Convert.ToInt32(selectedPriceTo)) && filterObj.Title.Contains(searchBox)) 
             {
                 if (filterObj.isOutgoing.Equals(!isExpense) && filterObj.isIncoming.Equals(!isIncoming))
                 {
@@ -162,8 +161,11 @@ namespace wallet_project_WPF
         private void Change_Window_Transaction_Click(object sender, RoutedEventArgs e) {
             TransactionWindow transactionWindow = new TransactionWindow(wallet);
             transactionWindow.ShowDialog();
-            _context.Transactions.Load();
-            transactionList.ItemsSource = _context.Transactions.Where(t => t.Wallet == wallet).ToList();
+            //_context.Transactions.Load();
+            using(var context = new WalletContext()) {
+                transactionList.ItemsSource = context.Transactions.Where(t => t.Wallet == wallet).ToList();
+                //transactionList.Items.Refresh();
+            }
         }
         private void incomingButton_Checked(object sender, RoutedEventArgs e)
         {
@@ -199,7 +201,8 @@ namespace wallet_project_WPF
 
         }
 
-     
-
+        private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e) {
+            transactionList.Items.Filter = MyFilter;
+        }
     }
 }

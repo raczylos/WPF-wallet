@@ -13,14 +13,14 @@
             <ColumnDefinition Width="181*"/>
         </Grid.ColumnDefinitions>
 
-        <ListView x:Name="transactionList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,174,10,10" Grid.ColumnSpan="2">
+        <ListView x:Name="transactionList" Margin="10,174,10,10" Grid.ColumnSpan="2">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Header="Title" Width="Auto" DisplayMemberBinding="{Binding title}"/>
-                        <GridViewColumn Header="Price" Width="Auto" DisplayMemberBinding="{Binding MoneyAmount}"/>
-                        <GridViewColumn Header="Category" Width="Auto" DisplayMemberBinding="{Binding Category.Name}"/>
-                        <GridViewColumn Header="isIncoming" Width="Auto" DisplayMemberBinding="{Binding isIncoming}"/>
+                        <GridViewColumn Header="Title" Width="100" DisplayMemberBinding="{Binding Title}"/>
+                        <GridViewColumn Header="Price" Width="100" DisplayMemberBinding="{Binding MoneyAmount}"/>
+                        <GridViewColumn Header="Category" Width="100" DisplayMemberBinding="{Binding Category.Name}"/>
+                        <GridViewColumn Header="isIncoming" Width="100" DisplayMemberBinding="{Binding isIncoming}"/>
                     </GridView.Columns>
                 </GridView>
             </ListView.View>
@@ -31,15 +31,6 @@
                     <ColumnDefinition Width="289*"/>
                     <ColumnDefinition Width="84*"/>
                 </Grid.ColumnDefinitions>
-                <Grid Margin="0,96,0,10" Grid.ColumnSpan="2">
-                    <Label Content="Data:"  VerticalAlignment="Center" Margin="10,0,326,0"/>
-                    <ComboBox HorizontalAlignment="Left"  VerticalAlignment="Center" Width="80" Height="21" Margin="95,0,0,0" >
-                        <ComboBoxItem/>
-                    </ComboBox>
-                    <TextBox HorizontalAlignment="Left" Margin="190,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="75"/>
-                    <TextBox HorizontalAlignment="Left" Margin="288,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="75"/>
-                    <Label Content="-" HorizontalAlignment="Left" Margin="270,0,0,0" VerticalAlignment="Center" Width="18"/>
-                </Grid>
                 <Grid Margin="0,49,0,45" Grid.ColumnSpan="2">
                     <Label Content="Kategorie:" HorizontalAlignment="Left"  VerticalAlignment="Center" Margin="10,0,0,0"/>
                     <ComboBox x:Name="categoryComboBox" SelectedIndex="0" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="138" Height="21" Margin="95,0,0,0" SelectionChanged="CategoriesChanged"/>
@@ -54,15 +45,14 @@
                 </Grid>
             </Grid>
         </GroupBox>
-        <Button Content="Zatwierdź" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top" Width="385" Height="20"/>
-        <Button Name="Change_Window_Transaction"  Content="Dodaj transakcję" Grid.Column="1" HorizontalAlignment="Center" Margin="0,90,0,0" VerticalAlignment="Top" Padding="5" Click="Change_Window_Transaction_Click" Height="28" Width="100">
+        <Button Name="Change_Window_Transaction"  Content="Dodaj transakcję" Grid.Column="1" HorizontalAlignment="Right" Margin="0,136,10,0" VerticalAlignment="Top" Padding="5" Click="Change_Window_Transaction_Click" Height="28" Width="100">
         </Button>
         <GroupBox Header="Wyszukiwanie" Margin="400,10,10,0" Grid.ColumnSpan="2" VerticalAlignment="Top" Height="47" >
             <Grid>
-                <TextBox x:Name="SearchTextBox"  HorizontalContentAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" Height="24" Margin="10,0,10,0" />
+                <TextBox x:Name="SearchTextBox"  HorizontalContentAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" Height="24" Margin="10,0,10,0" TextChanged="SearchTextBox_TextChanged" />
             </Grid>
         </GroupBox>
-        <Grid Margin="400,141,0,0" VerticalAlignment="Top" Height="28" HorizontalAlignment="Left" Width="60" Grid.ColumnSpan="2"  >
+        <Grid Margin="405,136,0,0" VerticalAlignment="Top" Height="28" HorizontalAlignment="Left" Width="60" Grid.ColumnSpan="2"  >
             <Button x:Name="DownloadButton" Content="Download" HorizontalAlignment="Center"  Margin="0,2,0,2" Click="DownloadButton_Click" />
         </Grid>
     </Grid>

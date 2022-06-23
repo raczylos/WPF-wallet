@@ -34,7 +34,6 @@ namespace wallet_project_WPF
                
                 if (!_context.Users.Any(u => u.Name == User_Name.Text) && User_Password.Password == User_Password_Repeat.Password && User_Name.Text.Length > 0 && User_Password.Password.Length >= 6)
                 {
-                    MessageBox.Show("user create ", "UserName", MessageBoxButton.OK, MessageBoxImage.Information);
                     user.Password = User_Password.Password;
                     user.Name = User_Name.Text;
                     _context.Users.Add(user);

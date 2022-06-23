@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wallet_project_WPF"
         mc:Ignorable="d"
-        Title="TransactionWindow" Height="450" Width="800"
+        Title="TransactionWindow" Height="500" Width="800" MinHeight="500" MinWidth="800"
         Loaded="Window_Loaded">
     <Window.Resources>
         <CollectionViewSource x:Key="categoryViewSource" />
@@ -16,33 +16,43 @@
             <ColumnDefinition Width="371*"/>
             <ColumnDefinition Width="214*"/>
         </Grid.ColumnDefinitions>
-        <Border BorderBrush="Black" BorderThickness="1" Margin="52,68,42,214" Grid.Column="1">
-        </Border>
-        <ListView x:Name="TransactionCRUDlist" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,10,45,157">
+        <ListView x:Name="TransactionCRUDlist" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="161">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Header="Title" Width="Auto" DisplayMemberBinding="{Binding title}"/>
-                        <GridViewColumn Header="Price" Width="Auto" DisplayMemberBinding="{Binding MoneyAmount}"/>
+                        <GridViewColumn Header="Title" Width="69" DisplayMemberBinding="{Binding Title}"/>
+                        <GridViewColumn Header="Price" Width="69" DisplayMemberBinding="{Binding MoneyAmount}"/>
                     </GridView.Columns>
                 </GridView>
             </ListView.View>
         </ListView>
 
 
-        <Button Name="Transaction_Add" Content="Dodaj transakcję" HorizontalAlignment="Left" Margin="134,181,0,0" VerticalAlignment="Top" Height="26" Width="116" Click="Add_Transaction" Grid.Column="1"/>
-        <TextBox Name="MoneyAmount_TextBox" HorizontalAlignment="Left" Margin="65,82,0,0" TextWrapping="Wrap" Text="{Binding MoneyAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="111" Height="27" TextAlignment="Left" Grid.Column="1"/>
 
         <Button Name="Transaction_Edit" Content="Edytuj transakcję" HorizontalAlignment="Left" Margin="30,291,0,0" VerticalAlignment="Top" Height="26" Width="116" Click="Edit_Transaction"/>
         <Button Name="Transaction_Delete" Content="Usuń transakcję" HorizontalAlignment="Left" Margin="30,322,0,0" VerticalAlignment="Top" Height="26" Width="116" Click="Delete_Transaction"/>
-        <StackPanel Margin="181,68,42,0" VerticalAlignment="Top" Height="41" Grid.Column="1">
-            <RadioButton Name="Incoming_Radio" GroupName="Incoming" Content="Wpływ" HorizontalAlignment="Left" Margin="0,12,0,0" VerticalAlignment="Top" IsChecked="{Binding isIncoming, Mode=TwoWay}"/>
-            <RadioButton Name="Outgoing_Radio" GroupName="Incoming" Content="Wydatek" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,0" />
-        </StackPanel>
-        <ComboBox ItemsSource="{Binding Source={StaticResource categoryViewSource} }" DisplayMemberPath="Name" SelectedValue="{Binding Category, Mode=TwoWay}" Name="Categories_Combobox" HorizontalAlignment="Left" Margin="65,122,0,0" VerticalAlignment="Top" Width="120" IsEditable="True" Text="Wybierz kategorię" Grid.Column="1"/>
-        <CheckBox Name="Cycle_Checkbox" Content="Transakcja cykliczna" HorizontalAlignment="Left" Margin="65,149,0,0" VerticalAlignment="Top" IsChecked="{Binding IsCycle, Mode=TwoWay}" Grid.Column="1"/>
-        <TextBox Name="Category_Name"  Grid.Column="2" HorizontalAlignment="Center" Margin="0,176,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+        <GroupBox Grid.Column="1" Header="Transakcja" Margin="0,0,0,190">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="44*"/>
+                    <RowDefinition Height="177*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="203,32,43,0" VerticalAlignment="Top" Height="41" Grid.Row="1">
+                    <RadioButton Name="Incoming_Radio" GroupName="Incoming" Content="Wpływ" HorizontalAlignment="Left" Margin="0,12,0,0" VerticalAlignment="Top" IsChecked="{Binding isIncoming, Mode=TwoWay}"/>
+                    <RadioButton Name="Outgoing_Radio" GroupName="Incoming" Content="Wydatek" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,0" />
+                </StackPanel>
+                <Button Name="Transaction_Add" Content="Dodaj transakcję" HorizontalAlignment="Left" Margin="119,0,0,10" VerticalAlignment="Bottom" Height="26" Width="116" Click="Add_Transaction" Grid.Row="1"/>
+                <TextBox Name="MoneyAmount_TextBox" HorizontalAlignment="Center" Margin="0,43,0,0" TextWrapping="Wrap" Text="{Binding MoneyAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="111" Height="27" TextAlignment="Left" Grid.RowSpan="2"/>
+                <ComboBox ItemsSource="{Binding Source={StaticResource categoryViewSource} }" Padding="5" DisplayMemberPath="Name" SelectedValue="{Binding Category, Mode=TwoWay}" Name="Categories_Combobox" HorizontalAlignment="Left" Margin="54,45,0,0" VerticalAlignment="Top" Width="135" IsEditable="True" Text="Wybierz kategorię" Grid.Row="1"/>
+                <CheckBox Name="Cycle_Checkbox" Content="Transakcja cykliczna" HorizontalAlignment="Left" Margin="54,78,0,0" VerticalAlignment="Top" IsChecked="{Binding IsCycle, Mode=TwoWay}" Grid.Row="1"/>
+                <TextBox HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="{Binding Title}" VerticalAlignment="Top" Width="111" Padding="5"/>
+                <Label Content="Tytuł" HorizontalAlignment="Left" Margin="81,12,0,0" VerticalAlignment="Top"/>
+                <Label Content="Kwota" HorizontalAlignment="Left" Margin="81,41,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+            </Grid>
+        </GroupBox>
         <Label Grid.Column="2" Content="Nazwa kategorii" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="Category_Name"  Grid.Column="2" HorizontalAlignment="Center" Margin="0,176,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Button Name="Category_Add" Grid.Column="2" Padding="5" Content="Dodaj kategorię" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Click="Category_Add_Click"/>
 
 

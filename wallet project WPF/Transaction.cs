@@ -10,6 +10,7 @@ namespace wallet_project_WPF {
         public int TransactionId { get; set; }
         public double? MoneyAmount { get; set; }
         public bool? isIncoming { get; set; } // incoming: ++money 
+        public string? Title { get; set; }
         [NotMapped]
         public bool? isOutgoing { get { return !isIncoming; } } // outgoing: --money
         public bool? isCycle { get; set; } // transaction repeats every month

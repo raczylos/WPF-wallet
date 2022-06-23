@@ -49,7 +49,6 @@ namespace wallet_project_WPF
                 }
                 else
                 {
-                    MessageBox.Show("Login succesful", "Login", MessageBoxButton.OK, MessageBoxImage.Information);
                     SelectWallet selectWallet = new SelectWallet(user);
                     selectWallet.Show();
                     this.Close();
