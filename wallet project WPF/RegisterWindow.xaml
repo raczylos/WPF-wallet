@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wallet_project_WPF"
         mc:Ignorable="d"
-        Title="RegisterWindow" Height="500" Width="400">
+        Title="RegisterWindow" Height="500" Width="400"
+         Style="{DynamicResource CustomWindowStyle}">
 
     <Grid>
         <Grid>
@@ -19,7 +20,7 @@
                            FontWeight="Light"
                            FontFamily="helvetica"
                            FontSize="24"
-                           Foreground="Black"
+                          
                            HorizontalAlignment="Center"/>
             </StackPanel>
 
@@ -34,7 +35,7 @@
                              FontWeight="Light"                           
                              FontSize="20"
                              HorizontalAlignment="Center"
-                             Foreground="Black"
+                             
                              Background="Transparent"
                              BorderThickness="0"
                              Width="200"
@@ -61,7 +62,7 @@
                                                      
                              FontSize="20"
                              HorizontalAlignment="Center"
-                             Foreground="Black"
+                             
                              Background="Transparent"
                              BorderThickness="0"
                              Width="235"
@@ -87,7 +88,7 @@
                              
                              FontSize="20"
                              HorizontalAlignment="Center"
-                             Foreground="Black"
+                             
                              Background="Transparent"
                              BorderThickness="0"
                              Width="235"

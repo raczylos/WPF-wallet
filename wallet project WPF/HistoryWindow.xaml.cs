@@ -204,5 +204,7 @@ namespace wallet_project_WPF
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e) {
             transactionList.Items.Filter = MyFilter;
         }
+
+      
     }
 }
