@@ -55,5 +55,6 @@
         <Grid Margin="405,136,0,0" VerticalAlignment="Top" Height="28" HorizontalAlignment="Left" Width="60" Grid.ColumnSpan="2"  >
             <Button x:Name="DownloadButton" Content="Download" HorizontalAlignment="Center"  Margin="0,2,0,2" Click="DownloadButton_Click" />
         </Grid>
+        <Button Name="ExportToXLSX_Button" Grid.Column="1" Content="Export to XLSX" HorizontalAlignment="Left" Margin="32,138,0,0" VerticalAlignment="Top" Height="24" Width="92" Click="ExportToXLSX_Button_Click"/>
     </Grid>
 </Window>

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-
+using IronXL;
 
 namespace wallet_project_WPF
 {
@@ -143,8 +143,6 @@ namespace wallet_project_WPF
             transactionList.Items.Filter = MyFilter;
             //categoryComboBox.ItemsSource
 
-
-
         }
 
         private void priceFrom_TextChanged(object sender, TextChangedEventArgs e)
@@ -203,6 +201,24 @@ namespace wallet_project_WPF
 
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e) {
             transactionList.Items.Filter = MyFilter;
+        }
+
+        private void ExportToXLSX_Button_Click(object sender, RoutedEventArgs e) {
+            List<Transaction> transactions = _context.Transactions.Where(t => t.Wallet == wallet).ToList();
+            WorkBook workBook = WorkBook.Create(ExcelFileFormat.XLSX);
+            var sheet = workBook.CreateWorkSheet("Transaction History");
+            sheet["A1"].Value = "Title";
+            sheet["B1"].Value = "Price";
+            sheet["C1"].Value = "Category";
+            sheet["D1"].Value = "isIncoming";
+            for (int i = 1; i <= transactions.Count; i++) {
+                sheet["A" + (i+1)].Value = transactions[i - 1].Title;
+                sheet["B" + (i+1)].Value = transactions[i - 1].MoneyAmount;
+                sheet["C" + (i+1)].Value = transactions[i - 1]?.Category?.Name;
+                sheet["D" + (i+1)].Value = transactions[i - 1].isIncoming.ToString();
+            }
+            workBook.SaveAs("transaction_history.xlsx");
+            MessageBox.Show("Export to xlsx was successful");
         }
     }
 }
